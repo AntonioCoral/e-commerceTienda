@@ -1,0 +1,37 @@
+<!-- src/app/components/navbar/navbar.component.html -->
+<mat-toolbar color="primary" style="height: 100px;" >
+  <mat-toolbar-row>
+    <a [routerLink]="['/product-list']"> <!-- Asegúrate de que el enlace del logo te lleve a la página de inicio -->
+      <img src="assets/logotransparente.png" alt="La tiendita en línea Logo" style="height: 150px;">
+    </a>
+    <span>La tiendita en línea</span>
+    <span class="spacer"></span>
+
+    <!-- Contenedor para la barra de búsqueda -->
+    <div class="search-container">
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-label>Buscar productos</mat-label>
+        <input matInput [(ngModel)]="searchQuery" placeholder="Buscar productos...">
+      </mat-form-field>
+      <button mat-icon-button (click)="buscarProductos(searchQuery)">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>category</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <ng-container *ngFor="let categoria of category">
+        <button mat-menu-item (click)="filtrarPorCategoria(categoria)">
+          {{ categoria.name }}
+        </button>
+      </ng-container>
+    </mat-menu>
+
+    <button mat-icon-button (click)="verCarrito()">
+      <mat-icon>shopping_cart</mat-icon>
+      <span *ngIf="carrito.length" class="cart-count">{{ carrito.length }}</span>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

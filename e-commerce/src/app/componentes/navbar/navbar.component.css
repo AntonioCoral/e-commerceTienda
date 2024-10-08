@@ -1,0 +1,50 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Contenedor de la barra de búsqueda para centrar y ajustar su diseño */
+
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+  width: auto; /* Ocupar el 40% del ancho del contenedor */
+  background-color: rgb(90, 228, 232);
+}
+
+mat-form-field.search-bar {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  color: #777;
+  width: 620px;
+  height: 56px;
+}
+
+mat-form-field.search-bar input {
+  color: #000000; /* Texto en color gris */
+}
+
+mat-form-field.search-bar .mat-form-field-wrapper {
+  padding: 5px 10px; /* Añade algo de espacio interno */
+}
+
+mat-form-field.search-bar .mat-placeholder {
+  color: #000000; /* Color gris claro para el placeholder */
+}
+mat-label{
+color: rgb(199, 199, 199);
+}
+
+.search-container button {
+  padding-top: 10px;
+  background-color: #fff; /* Fondo blanco para el botón de búsqueda */
+  border-radius: 5%;
+  height: auto;
+  margin-left: 1px; /* Espacio entre el input y el botón */
+  align-items:start;
+}
+
+
+
+.search-container button mat-icon {
+  color: #777; /* Icono de color gris */
+}

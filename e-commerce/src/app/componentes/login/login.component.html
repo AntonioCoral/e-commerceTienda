@@ -1,0 +1,51 @@
+<!-- src/app/components/home/home.component.html -->
+<!-- Banner Section -->
+<div class="banner">
+    <img src="assets/super.jpg" alt="Supermercado">
+    <button class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x" routerLink="/product-list">Ir a la tienda en línea</button>
+  </div>
+  
+  <h1 class="text-center my-4">Nuestros servicios</h1>
+  <!-- Service Carousel -->
+  <div id="serviceCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <!-- Asegúrate de tener al menos 4 servicios para llenar esta fila -->
+          <div class="col-md-3" *ngFor="let service of services.slice(0,4)">
+            <div class="card">
+              <img src="assets/servicios/{{service.image}}" alt="{{service.title}}">
+              <h5>{{service.title}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Otros items del carrusel según sea necesario -->
+    </div>
+  </div>
+  
+  <h1 class="text-center my-4">Contamos con una gran variedad de productos</h1>
+  <!-- Category Carousel -->
+  <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <!-- Asegúrate de tener al menos 4 categorías para llenar esta fila -->
+          <div class="col-md-3" *ngFor="let category of categories.slice(0,4)">
+            <div class="card">
+              <img src="assets/categorias/{{category.image}}" alt="{{category.title}}">
+              <h2>{{category.title}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Otros items del carrusel según sea necesario -->
+    </div>
+  </div>
+  
+  <div class="text-center my-4">
+    <h2>Pídelo y recógelo sin esperar</h2>
+    <img src="assets/pick up.png" alt="Pick Up" style="width: 100px;">
+    <button routerLink="/product-list" class="btn btn-primary">Pedir</button>
+  </div>
+  

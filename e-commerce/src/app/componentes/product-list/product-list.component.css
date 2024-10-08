@@ -1,0 +1,134 @@
+.main-container {
+  max-width: 1200px;
+  margin: 10% ;  /* Ajusta para centrar y añadir margen uniformemente */
+  padding: 10px;
+}
+.product-image {
+  width: 100%;
+  height: 200px; /* Tamaño fijo */
+  object-fit: cover; /* Ajustar la imagen sin distorsionar */
+  border-radius: 8px; /* Opcional, redondear las esquinas */
+}
+
+.card {
+  min-height: 50px; /* Altura mínima fija */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Sección de productos con degradado */
+.product-section {
+  position: relative;
+  margin-top: -250px; /* Ajusta para mayor superposición */
+  z-index: 2;
+  background: linear-gradient(to top, rgb(243, 243, 243) 80%, rgba(212, 212, 212, 0.055) 100%);
+  padding: 5px;
+}
+
+/* Ajustar el contenedor del producto para disposición horizontal */
+.product-container {
+  display: flex;
+  flex-direction: row; /* Asegurar alineación horizontal */
+  overflow-x: auto;
+  gap: 15px; /* Espacio entre productos */
+  padding-left: 20px; /* Añade espacio al inicio del carousel */
+  padding-right: 20px; /* Espacio después del último producto */
+}
+
+.product-container::-webkit-scrollbar {
+  display: none; /* Ocultar la barra de desplazamiento */
+}
+
+/* Tarjetas de productos */
+.product-card {
+  flex: 0 0 auto; /* Asegura que cada tarjeta se comporte como un bloque dentro de una fila */
+  width: 220px;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.01); /* Efecto hover para agrandar la tarjeta */
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Botones de control del carousel */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-control.left {
+  left: 10px;
+}
+
+.carousel-control.right {
+  right: 10px;
+}
+
+
+.option-button-container {
+  margin-bottom: 10px; /* Espacio entre opciones */
+}
+
+.option-button {
+  width: 100%; /* Ocupar todo el ancho disponible */
+  text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.option-selected {
+  background-color: #a8c7e8; /* Cambiar color al seleccionar */
+  color: white;
+  border-color: #6894c4;
+}
+
+.add-cart-button {
+  margin-top: 10px;
+  width: 100%; /* Ocupar todo el ancho del card */
+}
+
+
+/* Seccion del footer*/
+
+.footer {
+  background-color: #fff; /* Fondo blanco */
+  border-top: 1px solid #eaeaea; /* Línea separadora superior */
+}
+
+.nav-link {
+  color: #6c757d; /* Color gris claro para los enlaces */
+}
+
+.nav-link:hover {
+  color: #000; /* Cambia a negro cuando pasas el ratón */
+}
+
+.text-muted {
+  color: #6c757d !important; /* Color gris para el texto */
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dee2e6; /* Añadir la línea inferior */
+}
