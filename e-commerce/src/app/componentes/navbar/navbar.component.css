@@ -1,50 +1,71 @@
-.spacer {
-  flex: 1 1 auto;
+/* Ajustes generales para el navbar */
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
-/* Contenedor de la barra de búsqueda para centrar y ajustar su diseño */
+.mat-toolbar-row {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  justify-content: space-between;
+}
 
+/* Ajustes para la barra de búsqueda */
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Hacer que la barra de búsqueda crezca para ocupar el espacio disponible */
+  margin-left: 10px; /* Añadir espacio entre el menú hamburguesa y la barra de búsqueda */
+}
 
-/* Estilos para la barra de búsqueda */
 .search-bar {
-  width: auto; /* Ocupar el 40% del ancho del contenedor */
-  background-color: rgb(90, 228, 232);
-}
-
-mat-form-field.search-bar {
+  width: 100%;
+  max-width: 500px; /* Máximo ancho para pantallas grandes */
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  color: #777;
-  width: 620px;
-  height: 56px;
 }
 
-mat-form-field.search-bar input {
-  color: #000000; /* Texto en color gris */
-}
-
-mat-form-field.search-bar .mat-form-field-wrapper {
-  padding: 5px 10px; /* Añade algo de espacio interno */
-}
-
-mat-form-field.search-bar .mat-placeholder {
-  color: #000000; /* Color gris claro para el placeholder */
-}
-mat-label{
-color: rgb(199, 199, 199);
+.search-bar input {
+  color: #000000;
+  width: 100%; /* Asegurar que el input ocupe todo el espacio disponible */
 }
 
 .search-container button {
-  padding-top: 10px;
-  background-color: #fff; /* Fondo blanco para el botón de búsqueda */
-  border-radius: 5%;
-  height: auto;
-  margin-left: 1px; /* Espacio entre el input y el botón */
-  align-items:start;
+  margin-left: 5px;
+  padding: 0 10px; /* Añadir más espacio al botón de búsqueda */
 }
 
+/* Ajustes para el botón del carrito y menú hamburguesa */
+button.mat-icon-button {
+  font-size: 24px;
+  margin-right: 10px; /* Añadir margen para separarlos de la barra de búsqueda */
+}
 
+/* Media Query para pantallas pequeñas (menores a 768px) */
+@media (max-width: 768px) {
+  .mat-toolbar-row {
+    flex-direction: row;
+    justify-content: space-between; /* Asegurar que los elementos estén distribuidos correctamente */
+  }
 
-.search-container button mat-icon {
-  color: #777; /* Icono de color gris */
+  .search-container {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+
+  .search-bar {
+    height: 40px; /* Reducir la altura de la barra de búsqueda */
+  }
+
+  .search-container button {
+    margin-left: 5px;
+    padding: 0 10px; /* Ajustar el tamaño del botón de búsqueda */
+  }
+
+  .mat-icon {
+    font-size: 24px;
+  }
 }

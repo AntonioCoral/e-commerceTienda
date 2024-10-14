@@ -1,11 +1,18 @@
 <!-- src/app/components/navbar/navbar.component.html -->
-<mat-toolbar color="primary" style="height: 100px;" >
+<mat-toolbar color="primary">
   <mat-toolbar-row>
-    <a [routerLink]="['/product-list']"> <!-- Asegúrate de que el enlace del logo te lleve a la página de inicio -->
-      <img src="assets/logotransparente.png" alt="La tiendita en línea Logo" style="height: 150px;">
-    </a>
-    <span>La tiendita en línea</span>
-    <span class="spacer"></span>
+
+    <!-- Menú hamburguesa para las categorías -->
+    <button mat-icon-button [matMenuTriggerFor]="menuCategorias">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menuCategorias="matMenu">
+      <ng-container *ngFor="let categoria of category">
+        <button mat-menu-item (click)="filtrarPorCategoria(categoria)">
+          {{ categoria.name }}
+        </button>
+      </ng-container>
+    </mat-menu>
 
     <!-- Contenedor para la barra de búsqueda -->
     <div class="search-container">
@@ -18,20 +25,11 @@
       </button>
     </div>
 
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>category</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <ng-container *ngFor="let categoria of category">
-        <button mat-menu-item (click)="filtrarPorCategoria(categoria)">
-          {{ categoria.name }}
-        </button>
-      </ng-container>
-    </mat-menu>
-
+    <!-- Botón del carrito -->
     <button mat-icon-button (click)="verCarrito()">
       <mat-icon>shopping_cart</mat-icon>
       <span *ngIf="carrito.length" class="cart-count">{{ carrito.length }}</span>
     </button>
+
   </mat-toolbar-row>
 </mat-toolbar>

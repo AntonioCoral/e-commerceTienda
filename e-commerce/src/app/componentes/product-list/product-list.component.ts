@@ -24,7 +24,7 @@ export class ProductListComponent implements OnInit {
   selectedOptions: { [productId: number]: ProductOption } = {};
   currentPage: number = 2;  // Página actual
   totalPages: number = 1;
-  limit: number = 2;        // Límite de productos por página
+  limit: number = 7;        // Límite de productos por página
    // Crear un objeto para mantener el estado de la paginación por categoría
   paginationState: { [category: string]: { currentPage: number; totalPages: number } } = {};
 

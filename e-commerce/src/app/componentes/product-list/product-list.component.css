@@ -1,49 +1,113 @@
+/* Diseño general para pantallas grandes (Escritorio) */
 .main-container {
   max-width: 1200px;
-  margin: 10% ;  /* Ajusta para centrar y añadir margen uniformemente */
+  margin: 10%;
   padding: 10px;
 }
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .main-container {
+    max-width: 100%;
+    margin: 5%;
+    padding: 5px;
+  }
+
+  .product-section {
+    margin-top: 0;
+    padding: 10px;
+    background: none;
+  }
+
+  .product-container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .product-card {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+
+  .product-image {
+    height: 150px; /* Reduce el tamaño en móviles */
+  }
+
+  /* Botones de control en el carousel */
+  .carousel-control.left,
+  .carousel-control.right {
+    display: none; /* Ocultarlos en móviles si no se requieren */
+  }
+
+  .add-cart-button,
+  .option-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Ajustes para pantallas medianas (tabletas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-container {
+    max-width: 100%;
+    margin: 5%;
+  }
+
+  .product-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .product-card {
+    width: calc(50% - 20px); /* 2 productos por fila */
+    margin-bottom: 20px;
+  }
+
+  .product-image {
+    height: 180px;
+  }
+}
+
+/* Estilos generales */
 .product-image {
   width: 100%;
-  height: 200px; /* Tamaño fijo */
-  object-fit: cover; /* Ajustar la imagen sin distorsionar */
-  border-radius: 8px; /* Opcional, redondear las esquinas */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .card {
-  min-height: 50px; /* Altura mínima fija */
+  min-height: 50px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Sección de productos con degradado */
 .product-section {
   position: relative;
-  margin-top: -250px; /* Ajusta para mayor superposición */
+  margin-top: -250px;
   z-index: 2;
   background: linear-gradient(to top, rgb(243, 243, 243) 80%, rgba(212, 212, 212, 0.055) 100%);
   padding: 5px;
 }
 
-/* Ajustar el contenedor del producto para disposición horizontal */
 .product-container {
   display: flex;
-  flex-direction: row; /* Asegurar alineación horizontal */
+  flex-direction: row;
   overflow-x: auto;
-  gap: 15px; /* Espacio entre productos */
-  padding-left: 20px; /* Añade espacio al inicio del carousel */
-  padding-right: 20px; /* Espacio después del último producto */
+  gap: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .product-container::-webkit-scrollbar {
-  display: none; /* Ocultar la barra de desplazamiento */
+  display: none;
 }
 
-/* Tarjetas de productos */
 .product-card {
-  flex: 0 0 auto; /* Asegura que cada tarjeta se comporte como un bloque dentro de una fila */
+  flex: 0 0 auto;
   width: 220px;
   background-color: white;
   border: 1px solid #ddd;
@@ -54,73 +118,30 @@
 }
 
 .product-card:hover {
-  transform: scale(1.01); /* Efecto hover para agrandar la tarjeta */
-}
-
-.product-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* Botones de control del carousel */
-.carousel-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #fff;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.carousel-control.left {
-  left: 10px;
-}
-
-.carousel-control.right {
-  right: 10px;
-}
-
-
-.option-button-container {
-  margin-bottom: 10px; /* Espacio entre opciones */
-}
-
-.option-button {
-  width: 100%; /* Ocupar todo el ancho disponible */
-  text-align: left; /* Alinear el texto a la izquierda */
-}
-
-.option-selected {
-  background-color: #a8c7e8; /* Cambiar color al seleccionar */
-  color: white;
-  border-color: #6894c4;
+  transform: scale(1.01);
 }
 
 .add-cart-button {
   margin-top: 10px;
-  width: 100%; /* Ocupar todo el ancho del card */
+  width: 100%;
 }
 
-
-/* Seccion del footer*/
-
+/* Footer */
 .footer {
-  background-color: #fff; /* Fondo blanco */
-  border-top: 1px solid #eaeaea; /* Línea separadora superior */
+  background-color: #fff;
+  border-top: 1px solid #eaeaea;
 }
 
 .nav-link {
-  color: #6c757d; /* Color gris claro para los enlaces */
+  color: #6c757d;
 }
 
 .nav-link:hover {
-  color: #000; /* Cambia a negro cuando pasas el ratón */
+  color: #000;
 }
 
 .text-muted {
-  color: #6c757d !important; /* Color gris para el texto */
+  color: #6c757d !important;
 }
 
 .container {
@@ -130,5 +151,5 @@
 }
 
 .border-bottom {
-  border-bottom: 1px solid #dee2e6; /* Añadir la línea inferior */
+  border-bottom: 1px solid #dee2e6;
 }

@@ -9,7 +9,7 @@ import { Product } from '../interfaces/producto';
   providedIn: 'root'
 })
 export class CategoryService {
-  private apiUrl = 'http://localhost:4500/api/categories/'; // Ajusta la URL a tu API
+  private apiUrl = 'http://89.116.50.243:4500/api/categories/'; // Ajusta la URL a tu API
 
   constructor(private http: HttpClient) {}
 
